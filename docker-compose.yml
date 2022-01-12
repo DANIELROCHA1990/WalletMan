@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  db:
+    container_name: db
+    image: postgres
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+  back_end:
+    container_name: back_end
+    build: ./back_end/
+    command: rails s -b 0.0.0.0
+    volumes:
+      - ./back_end:/walletman
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
