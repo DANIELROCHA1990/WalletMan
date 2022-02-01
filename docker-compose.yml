@@ -3,6 +3,7 @@ services:
   db:
     container_name: db
     image: postgres
+    restart: always
     volumes:
       - ./db:/var/lib/postgresql/data
     environment:
@@ -10,6 +11,7 @@ services:
   back_end:
     container_name: back_end
     build: ./back_end/
+    tty: true
     command: rails s -b 0.0.0.0
     volumes:
       - ./back_end:/walletman

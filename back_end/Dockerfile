@@ -18,5 +18,5 @@ COPY Gemfile /walletman/Gemfile
 COPY Gemfile.lock /walletman/Gemfile.lock
 RUN bundle install
 
-# Configure the main process to run when running the image
-# CMD ["rails", "server", "-b", "0.0.0.0"]
+Configure the main process to run when running the image
+CMD ["rails", "server", "-b", "0.0.0.0"]
