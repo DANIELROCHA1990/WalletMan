@@ -1,8 +1,10 @@
 FactoryBot.define do
   factory :wallet do
-    name { "MyString" }
+    name { 'Auto' }
+  end
+
+  factory :fail_wallet do
+    name { nil }
     public { false }
-    transactions { "" }
-    dividends { "" }
   end
 end
